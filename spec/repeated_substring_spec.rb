@@ -2,12 +2,10 @@ require 'spec_helper'
 require 'repeated_substring'
 
 RSpec.describe 'repeated_substring' do
-  it 'is an example' do
-    rs = RepeatedSubstring.new
-    expect(rs.find_repeated_substring('banana')).to eq(3)
-  end
-
-  xit 'find the most repeated substring for every line of a file' do
-    expect(RepeatedSubstring.new.find_repeated_substring_file('data/sample.txt')).to eq(['an', 'NONE', 'NONE', 'oo'])
+  it 'some small tests just to check if everything works' do
+    expect(RepeatedSubstring.new.find_repeated_substring("banana").length).to eq(2)
+    expect(RepeatedSubstring.new.find_repeated_substring("am so uniqe")).to eq("NONE")
+    expect(RepeatedSubstring.new.find_repeated_substring("aaaaaa").length).to eq(1)
+    expect(RepeatedSubstring.new.find_repeated_substring("kbnpks nuaqcalqcaqcam  fi qakbppki").length).to eq(4)
   end
 end
